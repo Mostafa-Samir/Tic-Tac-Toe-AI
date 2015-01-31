@@ -1,0 +1,72 @@
+.main-container {
+    height: 100%;
+    width: 900px;
+    margin: 0 auto;
+    font-family: "Arial Narrow";
+    /*font-size: 40px;*/
+    font-weight: bold;
+    color: lightskyblue;
+}
+
+.start {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #87CEFA;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50px;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    cursor:pointer;
+    opacity:0.5;
+    font-size:20px;
+}
+
+.start:hover {
+    opacity:1;
+}
+
+.dropdown-menu {
+    position: relative;
+    width:450px;
+}
+
+.with-borders {
+    border: 1px solid lightskyblue;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.dropdown-menu > .selection {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.dropdown-menu > .items {
+    border: 1px solid lightskyblue;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 5px;
+    width:450px;
+    z-index: 1000;
+    position: absolute;
+    background: white;
+    display: none;
+}
+
+.dropdown-menu > .items > h1 {
+    opacity: 0.5;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.dropdown-menu > .items > h1:hover {
+    opacity: 1;
+}

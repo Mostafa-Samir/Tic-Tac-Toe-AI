@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Tic-Tac-Toe AI</title>
+        <link rel = 'stylesheet' type = 'text/css' href = 'styles/ui.css'>
+    </head>
+
+    <body>
+        <div class = 'main-container'>
+            <div class="dropdown-menu">
+                <div class="selection">
+                    <h1>Choose a players configuration ...</h1>
+                </div>
+
+                <div class="items">
+                    <h1 data-xlevel = "master" data-olevel = "blind">X: Master vs. O: Blind</h1>
+                    <h1 data-xlevel = "master" data-olevel = "novice">X: Master vs. O: Novice</h1>
+                    <h1 data-xlevel = "novice" data-olevel = "blind">X: Novice vs. O: Blind</h1>
+                    <h1 data-xlevel = "novice" data-olevel = "novice">X: Novice vs. O: Novice</h1>
+                </div>
+            </div>
+            <h2>Games Played : <span id="count">0</span>/1000</h2>
+            <h2>Games Won: <span id="wonCount">0</span></h2>
+            <h2>&nbsp &nbsp &nbsp &nbsp Within 3 moves: <span id="won3">0</span></h2>
+            <h2>&nbsp &nbsp &nbsp &nbsp Within 4 moves: <span id="won4">0</span></h2>
+            <h2>&nbsp &nbsp &nbsp &nbsp Within 5 moves: <span id="won5">0</span></h2>
+            <h2>Games Lost: <span id="lostCount">0</span></h2>
+            <h2>Games Draw: <span id="drawCount">0</span></h2>
+
+            <div class='start'> Start Playing</div>
+        </div>
+
+        <script src = "scripts/jquery-1.10.1.min.js"></script>
+        <script src = "scripts/ui.js"></script>
+        <script src = "scripts/game.js"></script>
+        <script src = "scripts/ai.js"></script>
+        <script src = "scripts/control.js"></script>
+    </body>
+</html>
