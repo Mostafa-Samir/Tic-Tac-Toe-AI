@@ -66,6 +66,33 @@ ui.switchViewTo = function(turn) {
 };
 
 /*
+ * updates score table
+ * @param _status [String]: the last round winner
+ */
+ui.updateScore = function(_status) {
+    if (_status === "X-won") {
+        $('.human-score').text(parseInt($('.human-score').text()) + 1);
+    } else if (_status === "O-won") {
+        $('.robot-score').text(parseInt($('.robot-score').text()) + 1);
+    }
+}
+
+/*
+ * restarts board
+ */
+ui.restartGame = function(newGame) {
+    var board = $('.cell');
+
+    board.fadeOut(1200);
+    setTimeout(function() { board.text("");  }, 620);
+    board.fadeIn(function() {
+        $(board).removeClass('occupied');
+        $(board).addClass('undefined');
+        newGame.start(); }
+        );
+}
+
+/*
  * places X or O in the specifed place in the board
  * @param i [Number] : row number (0-indexed)
  * @param j [Number] : column number (0-indexed)
