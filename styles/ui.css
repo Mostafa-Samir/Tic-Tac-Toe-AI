@@ -4,6 +4,35 @@
     margin: 0 auto;
 }
 
+.score {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    float:left;
+    line-height: 60px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.total-score {
+    color: lightskyblue;
+    font-family: "Arial Narrow";
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.human-score {
+    float: left;
+    margin-left: 65px;
+    font-size: 45px;
+}
+
+.robot-score {
+    float: right;
+    margin-right: 65px;
+    font-size: 45px;
+}
+
 .board {
     height: 420px;
     width: 420px;

@@ -112,23 +112,28 @@ var State = function(old) {
  */
 var Game = function(autoPlayer) {
 
-    //public : initialize the ai player for this game
-    this.ai = autoPlayer;
+    // init new game
+    this.init = function() {
 
-    // public : initialize the game current state to empty board configuration
-    this.currentState = new State();
+        //public : initialize the ai player for this game
+        this.ai = autoPlayer;
 
-    //"E" stands for empty board cell
-    this.currentState.board = ["E", "E", "E",
-                               "E", "E", "E",
-                               "E", "E", "E"];
+        // public : initialize the game current state to empty board configuration
+        this.currentState = new State();
 
-    this.currentState.turn = "X"; //X plays first
+        //"E" stands for empty board cell
+        this.currentState.board = ["E", "E", "E",
+                                   "E", "E", "E",
+                                   "E", "E", "E"];
 
-    /*
-     * initialize game status to beginning
-     */
-    this.status = "beginning";
+        this.currentState.turn = "X"; //X plays first
+
+        /*
+         * initialize game status to beginning
+         */
+        this.status = "beginning";
+
+    }
 
     /*
      * public function that advances the game to a new state
@@ -139,6 +144,9 @@ var Game = function(autoPlayer) {
         if(_state.isTerminal()) {
             this.status = "ended";
 
+            //update score 
+            ui.updateScore(_state.result);
+
             if(_state.result === "X-won")
                 //X won
                 ui.switchViewTo("won");
@@ -148,6 +156,9 @@ var Game = function(autoPlayer) {
             else
                 //it's a draw
                 ui.switchViewTo("draw");
+
+                //start a new game
+                ui.restartGame(this);
         }
         else {
             //the game is still running
@@ -168,6 +179,7 @@ var Game = function(autoPlayer) {
      * starts the game
      */
     this.start = function() {
+        this.init();
         if(this.status = "beginning") {
             //invoke advanceTo with the initial state
             this.advanceTo(this.currentState);
